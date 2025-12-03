@@ -41,7 +41,7 @@ This project is released under the [MIT](https://github.com/murchlab/positronium
 
 ## Citing this work
 ```BibTeX
-@article{song2025superconducting,
+@article{positronium2025,
   title         = {Superconducting antiqubits achieve optimal phase estimation via unitary inversion},
   author        = {Song, Xingrui and Borjigin, Surihan Sean and Salvati, Flavio and Wang, Yu-Xin and Yunger Halpern, Nicole and Arvidsson-Shukur, David R. M. and Murch, Kater},
   journal       = {arXiv},
