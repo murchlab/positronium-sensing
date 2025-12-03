@@ -1,0 +1,53 @@
+# Positronium Sensing
+
+Repository for the manuscript [Superconducting antiqubits achieve optimal phase estimation via unitary inversion](https://arxiv.org/abs/2506.04315). The purpose of repository is to present the data analysis of the experimental project and clarify which part we corrected for the readout fidelity and which parts are intrinsic to the anti-qubit sensing mechanism we introduce.
+
+## Contents
+
+1. Fisher information analysis
+2. Readout integration weights
+3. Readout classification based on Histogram-based Gradient Boosting Classification Tree
+4. Readout fidelity correction based on Iterative Bayesian Update (IBU)
+
+## Preview
+
+## Requirements
+
+- Python 3.7+
+- NumPy
+- SciPy
+- Matplotlib
+- Nevergrad (optional for reproducing the demo ADC dataset)
+
+## Running in Binder
+
+You can launch the interactive notebook environment for this project directly in your browser via Binder. This allows you to run the data analysis without any local installation.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/murchlab/positronium-sensing/HEAD)
+
+Click the badge above to open the `positronium_sensing.ipynb` notebook in a live Binder session
+
+## Running locally
+
+```bash
+git clone https://github.com/murchlab/positronium-sensing.git
+cd positronium-sensing
+pip install -r requirements.txt
+```
+
+## License
+
+This project is released under the [MIT](https://github.com/murchlab/positronium-sensing/blob/main/LICENSE) License.
+
+## Citing this work
+```BibTeX
+@article{song2025superconducting,
+  title         = {Superconducting antiqubits achieve optimal phase estimation via unitary inversion},
+  author        = {Song, Xingrui and Borjigin, Surihan Sean and Salvati, Flavio and Wang, Yu-Xin and Yunger Halpern, Nicole and Arvidsson-Shukur, David R. M. and Murch, Kater},
+  journal       = {arXiv},
+  eprint        = {2506.04315},
+  primaryClass  = {quant-ph},
+  year          = {2025},
+  doi           = {10.48550/arXiv.2506.04315},
+  url           = {https://arxiv.org/abs/2506.04315}
+}
