@@ -4,12 +4,24 @@ Repository for the manuscript [Superconducting antiqubits achieve optimal phase 
 
 ## Contents
 
+### I. Experimental data
+
+Raw experimental data are stored in the `/Data` folder in `.csv` format.
+
+### II. Notebooks
+
 1. Fisher information analysis
 2. Readout integration weights
 3. Readout classification based on Histogram-based Gradient Boosting Classification Tree
 4. Readout fidelity correction based on Iterative Bayesian Update (IBU)
 
-## Preview
+## Previews
+
+- Rectangular windows for calculating the integration weights
+![integration_weights_windows](./Figures/integration_weights_windows.png "Rectangular windows for calculating the integration weights")
+
+- Readout fidelity correction
+![readout_fidelity_correction](./Figures/readout_fidelity_correction.png "Rectangular windows for calculating the integration weights")
 
 ## Requirements
 
