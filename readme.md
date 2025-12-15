@@ -20,6 +20,9 @@ Raw experimental data are stored in the `/Data` folder in `.csv` format.
 - Rectangular windows for calculating the integration weights
 ![integration_weights_windows](./Figures/integration_weights_windows.png "Rectangular windows for calculating the integration weights")
 
+- Integration weights
+![integration_weights](./Figures/integration_weights.png "Integration weights")
+
 - Readout fidelity correction
 ![readout_fidelity_correction](./Figures/readout_fidelity_correction.png "Rectangular windows for calculating the integration weights")
 
@@ -29,6 +32,7 @@ Raw experimental data are stored in the `/Data` folder in `.csv` format.
 - NumPy
 - SciPy
 - Matplotlib
+- H5py
 - Nevergrad (optional for reproducing the demo ADC dataset)
 
 ## Running in Binder
@@ -51,7 +55,7 @@ pip install -r requirements.txt
 
 This project is released under the [MIT](https://github.com/murchlab/positronium-sensing/blob/main/LICENSE) License.
 
-## Citing this work
+## Cite this work
 ```BibTeX
 @article{positronium2025,
   title         = {Superconducting antiqubits achieve optimal phase estimation via unitary inversion},
