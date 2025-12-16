@@ -12,8 +12,7 @@ Raw experimental data are stored in the `/Data` folder in `.csv` format.
 
 1. Fisher information analysis
 2. Readout integration weights
-3. Readout classification based on Histogram-based Gradient Boosting Classification Tree
-4. Readout fidelity correction based on Iterative Bayesian Update (IBU)
+3. Readout fidelity correction based on Iterative Bayesian Update (IBU)
 
 ## Previews
 
