@@ -33,12 +33,14 @@ See `data/README.md` for file descriptions.
 
 Run the notebooks in numeric order:
 
-1. `notebooks/01_readout_fidelity_corrected_data.ipynb`
-2. `notebooks/02_raw_data.ipynb`
-3. `notebooks/03_gate_fidelity_corrected_data.ipynb`
-4. `notebooks/04_combined_plots.ipynb`
-5. `notebooks/05_readout_integration_weights.ipynb`
-6. `notebooks/06_readout_fidelity_correction.ipynb`
+1. `notebooks/01_z_gates.ipynb`
+2. `notebooks/02_ac_stark_shift.ipynb`
+3. `notebooks/03_readout_fidelity_corrected_data.ipynb`
+4. `notebooks/04_raw_data.ipynb`
+5. `notebooks/05_gate_fidelity_corrected_data.ipynb`
+6. `notebooks/06_combined_plots.ipynb`
+7. `notebooks/07_readout_integration_weights.ipynb`
+8. `notebooks/08_readout_fidelity_correction.ipynb`
 
 Optional training-set notebook:
 - `notebooks/A01_integration_weights_training_set.ipynb`
