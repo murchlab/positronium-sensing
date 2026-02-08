@@ -31,8 +31,8 @@ The notebooks work with three related probability “styles” for the singlet d
 ```mermaid
 flowchart LR
   subgraph Inputs
-    D_csv["`data/` CSVs\n(time samples and populations)"]
-    D_h5["`data/` HDF5\n(ADC demo + integration windows)"]
+    D_csv["CSVs in `data/`\n(time samples and populations)"]
+    D_h5["HDF5 in `data/`\n(ADC demo + integration windows)"]
   end
 
   subgraph "FI Analysis Pipeline (Notebooks 03–06)"
