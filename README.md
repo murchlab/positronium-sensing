@@ -2,6 +2,8 @@
 
 Repository for the manuscript [Superconducting antiqubits achieve optimal phase estimation via unitary inversion](https://arxiv.org/abs/2506.04315).
 
+This repository is written for **manuscript reviewers and readers who were not involved in the experiments**. The goal is to make the *data-processing and analysis pipeline* crystal clear and reproducible, starting from the released probability datasets (CSV/HDF5) and ending with the figure exports used in the manuscript.
+
 This repository is organized for readers who want to reproduce the analysis end-to-end from the included CSV/HDF5 artifacts:
 
 - `notebooks/` contains the step-by-step analysis notebooks (numbered in recommended run order).
@@ -11,16 +13,53 @@ This repository is organized for readers who want to reproduce the analysis end-
 - `main_text_figures/` contains figure exports intended for the manuscript main text (for example, Fig. 3).
 - `figures/` contains small static assets embedded in notebooks/documentation.
 
-## Data Analysis Workflow
+## Analysis overview
+
+### Terminology used throughout the repo
+- `t`: experimental time samples (ns in the released CSVs).
+- `α` (alpha): rotation angle (radians) obtained from a global fit, used as the analysis x-axis.
+- `P(α)`: probability of a measurement outcome as a function of `α`.
+- `FI(α)`: (classical) Fisher information computed from `P(α)` using local fits.
+
+The notebooks work with three related probability “styles” for the singlet dataset:
+- **readout-corrected** (`original` in filenames): corrected for measurement assignment errors.
+- **raw** (`raw` in filenames): reconstructed *uncorrected* measurement probabilities (by applying readout confusion matrices).
+- **gate-corrected** (`corrected` in filenames): singlet curves corrected for entangling-gate errors (provided as derived CSVs and used for figure assembly).
+
+### Data-processing workflow (high level)
 
 ```mermaid
-graph TD
-    Raw[Raw experimental readout<br>probability distribution]
-    Raw --> RawData[Raw data]
-    Raw --> ReadoutCorr[Corrections for the<br>readout fidelity]
-    ReadoutCorr --> ReadoutCorrected[Readout-fidelity-corrected data]
-    ReadoutCorr --> GateCorr[Corrections for the<br>entangling gate fidelity]
-    GateCorr --> GateCorrected[Gate-fidelity-corrected data]
+flowchart LR
+  subgraph Inputs
+    D_csv["`data/` CSVs\n(time samples and populations)"]
+    D_h5["`data/` HDF5\n(ADC demo + integration windows)"]
+  end
+
+  subgraph "FI Analysis Pipeline (Notebooks 03–06)"
+    L["Load probability curves P(t)"]
+    A["Map time → rotation angle α\n(global decaying-cosine fit)"]
+    F["Estimate local derivative dP/dα\n(sliding-window fits in α)"]
+    I["Compute classical Fisher information\nFI(α) = (dP/dα)² / (P(1−P))"]
+    X["Export `data_analysis/*_alpha_P_FI_*.csv`"]
+    P["Assemble manuscript/SI panels\n(common α grid + mean across axes)"]
+    O_si["Write `si_figures/` exports"]
+    O_main["Write `main_text_figures/` exports"]
+  end
+
+  subgraph "Readout Integration Weights Demo (Notebooks 07 + A01)"
+    W1["Windowed downsampling\n(rectangular integration windows)"]
+    W2["Compute integration weights\n(Linear Discriminant Analysis)"]
+    W3["Write `si_figures/integration_weights*`"]
+  end
+
+  D_csv --> L --> A --> F --> I --> X --> P --> O_si
+  P --> O_main
+  D_h5 --> W1 --> W2 --> W3
+
+  RC["Optional: raw reconstruction\n(apply readout confusion matrices)"]
+  GC["Optional: gate-corrected singlet curves\n(used for figure assembly)"]
+  RC -.-> L
+  GC -.-> L
 ```
 
 ## Contents
