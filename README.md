@@ -33,17 +33,17 @@ See `data/README.md` for file descriptions.
 
 Run the notebooks in numeric order:
 
-1. `notebooks/01_z_gates.ipynb`
-2. `notebooks/02_ac_stark_shift.ipynb`
-3. `notebooks/03_readout_fidelity_corrected_data.ipynb`
-4. `notebooks/04_raw_data.ipynb`
-5. `notebooks/05_gate_fidelity_corrected_data.ipynb`
-6. `notebooks/06_combined_plots.ipynb`
-7. `notebooks/07_readout_integration_weights.ipynb`
-8. `notebooks/08_readout_fidelity_correction.ipynb`
+1. `notebooks/01_z_gate_curves_fig2cd.ipynb`
+2. `notebooks/02_ac_stark_shift_sweeps_fig2ef.ipynb`
+3. `notebooks/03_singlet_readout_corrected_fi_analysis.ipynb`
+4. `notebooks/04_singlet_raw_fi_analysis.ipynb`
+5. `notebooks/05_singlet_gate_corrected_fi_analysis.ipynb`
+6. `notebooks/06_combined_si_figures_and_fig3.ipynb`
+7. `notebooks/07_readout_integration_weights_demo.ipynb`
+8. `notebooks/08_readout_fidelity_correction_ibu_demo.ipynb`
 
 Optional training-set notebook:
-- `notebooks/A01_integration_weights_training_set.ipynb`
+- `notebooks/A01_integration_weights_demo_training_data.ipynb`
 
 Entrypoint notebook (overview + links):
 - `positronium_sensing.ipynb`
