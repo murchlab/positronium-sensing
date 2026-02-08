@@ -7,7 +7,8 @@ This repository is organized for readers who want to reproduce the analysis end-
 - `notebooks/` contains the step-by-step analysis notebooks (numbered in recommended run order).
 - `data/` contains the minimal experimental probability datasets used by the notebooks.
 - `data_analysis/` contains derived `alpha, P, FI` CSV products produced by the notebooks.
-- `si_figures_pub/` contains publication-style figure exports produced by the notebooks.
+- `si_figures/` contains supplementary-information figure exports produced by the notebooks.
+- `main_text_figures/` contains figure exports intended for the manuscript main text (for example, Fig. 3).
 - `figures/` contains small static assets embedded in notebooks/documentation.
 
 ## Data Analysis Workflow
@@ -48,10 +49,10 @@ Entrypoint notebook (overview + links):
 ## Previews
 
 - Rectangular windows for calculating the integration weights
-![integration_weights_windows](./si_figures_pub/integration_weights_windows.png)
+![integration_weights_windows](./si_figures/integration_weights_windows.png)
 
 - Integration weights
-![integration_weights](./si_figures_pub/integration_weights.png)
+![integration_weights](./si_figures/integration_weights.png)
 
 - Readout fidelity correction
 ![readout_fidelity_correction](./figures/readout_fidelity_correction.png)
@@ -92,4 +93,3 @@ This project is released under the MIT License. See `LICENSE`.
   url           = {https://arxiv.org/abs/2506.04315}
 }
 ```
-
