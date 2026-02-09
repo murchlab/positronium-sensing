@@ -31,4 +31,4 @@ These CSVs have three columns:
 ## Additional derived files
 - `ACS_f_sweep_*_th_*.csv`: model curves used by the AC Stark shift figure notebook.
 
-These files are consumed primarily by the figure-assembly notebooks (`notebooks/05_*`, `notebooks/06_*`).
+These files are consumed primarily by the figure-assembly notebooks ([`notebooks/05_singlet_gate_corrected_fi_analysis.ipynb`](../notebooks/05_singlet_gate_corrected_fi_analysis.ipynb), [`notebooks/06_combined_si_figures_and_fig3.ipynb`](../notebooks/06_combined_si_figures_and_fig3.ipynb)).

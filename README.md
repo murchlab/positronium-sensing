@@ -6,12 +6,12 @@ This repository provides a transparent and reproducible data-processing and anal
 
 This repository is organized for readers who want to reproduce the analysis end-to-end from the included CSV/HDF5 artifacts:
 
-- `notebooks/` contains the step-by-step analysis notebooks (numbered in recommended run order).
-- `data/` contains the minimal experimental probability datasets used by the notebooks.
-- `data_analysis/` contains derived `alpha, P, FI` CSV products produced by the notebooks.
-- `si_figures/` contains supplementary-information figure exports produced by the notebooks.
-- `main_text_figures/` contains figure exports intended for the manuscript main text (for example, Fig. 3).
-- `figures/` contains small static assets embedded in notebooks/documentation.
+- [`notebooks/`](./notebooks/) contains the step-by-step analysis notebooks (numbered in recommended run order).
+- [`data/`](./data/) contains the minimal experimental probability datasets used by the notebooks.
+- [`data_analysis/`](./data_analysis/) contains derived `alpha, P, FI` CSV products produced by the notebooks.
+- [`si_figures/`](./si_figures/) contains supplementary-information figure exports produced by the notebooks.
+- [`main_text_figures/`](./main_text_figures/) contains figure exports intended for the manuscript main text (for example, Fig. 3).
+- [`figures/`](./figures/) contains small static assets embedded in notebooks/documentation.
 
 ## Analysis overview
 
@@ -90,28 +90,28 @@ flowchart LR
 
 ## Contents
 
-### I. Experimental data (`data/`)
+### I. Experimental data ([`data/`](./data/))
 
-See `data/README.md` for file descriptions.
+See [`data/README.md`](./data/README.md) for file descriptions.
 
-### II. Notebooks (`notebooks/`)
+### II. Notebooks ([`notebooks/`](./notebooks/))
 
 Run the notebooks in numeric order:
 
-1. `notebooks/01_z_gate_curves_fig2cd.ipynb`
-2. `notebooks/02_ac_stark_shift_sweeps_fig2ef.ipynb`
-3. `notebooks/03_singlet_readout_corrected_fi_analysis.ipynb`
-4. `notebooks/04_singlet_raw_fi_analysis.ipynb`
-5. `notebooks/05_singlet_gate_corrected_fi_analysis.ipynb`
-6. `notebooks/06_combined_si_figures_and_fig3.ipynb`
-7. `notebooks/07_readout_integration_weights_demo.ipynb`
-8. `notebooks/08_readout_fidelity_correction_ibu_demo.ipynb`
+1. [`notebooks/01_z_gate_curves_fig2cd.ipynb`](./notebooks/01_z_gate_curves_fig2cd.ipynb)
+2. [`notebooks/02_ac_stark_shift_sweeps_fig2ef.ipynb`](./notebooks/02_ac_stark_shift_sweeps_fig2ef.ipynb)
+3. [`notebooks/03_singlet_readout_corrected_fi_analysis.ipynb`](./notebooks/03_singlet_readout_corrected_fi_analysis.ipynb)
+4. [`notebooks/04_singlet_raw_fi_analysis.ipynb`](./notebooks/04_singlet_raw_fi_analysis.ipynb)
+5. [`notebooks/05_singlet_gate_corrected_fi_analysis.ipynb`](./notebooks/05_singlet_gate_corrected_fi_analysis.ipynb)
+6. [`notebooks/06_combined_si_figures_and_fig3.ipynb`](./notebooks/06_combined_si_figures_and_fig3.ipynb)
+7. [`notebooks/07_readout_integration_weights_demo.ipynb`](./notebooks/07_readout_integration_weights_demo.ipynb)
+8. [`notebooks/08_readout_fidelity_correction_ibu_demo.ipynb`](./notebooks/08_readout_fidelity_correction_ibu_demo.ipynb)
 
 Optional training-set notebook:
-- `notebooks/A01_integration_weights_demo_training_data.ipynb`
+- [`notebooks/A01_integration_weights_demo_training_data.ipynb`](./notebooks/A01_integration_weights_demo_training_data.ipynb)
 
 Entrypoint notebook (overview + links):
-- `positronium_sensing.ipynb`
+- [`positronium_sensing.ipynb`](./positronium_sensing.ipynb)
 
 ## Previews
 
@@ -139,13 +139,13 @@ Entrypoint notebook (overview + links):
 
 ## Requirements
 
-See `requirements.txt`.
+See [`requirements.txt`](./requirements.txt).
 
 ## Running in Binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/murchlab/positronium-sensing/HEAD?urlpath=lab/tree/positronium_sensing.ipynb)
 
-Click the badge above to launch Binder directly into `positronium_sensing.ipynb`.
+Click the badge above to launch Binder directly into [`positronium_sensing.ipynb`](./positronium_sensing.ipynb).
 
 ## Running locally
 
@@ -157,7 +157,7 @@ pip install -r requirements.txt
 
 ## License
 
-This project is released under the MIT License. See `LICENSE`.
+This project is released under the MIT License. See [`LICENSE`](./LICENSE).
 
 ## Cite this work
 
