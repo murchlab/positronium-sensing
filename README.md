@@ -28,13 +28,13 @@ The major advantage demonstrated in this work relies on **platform-specific unit
 ```mermaid
 %%{init: {'theme': 'neutral'} }%%
 flowchart TD
-    Raw["Raw experimental readout\nprobability distribution"]
+    Raw["Raw experimental readout<br/>probability distribution"]
 
-    Raw -->|Corrections for\nreadout fidelity| ReadoutCorrected["Readout-fidelity-corrected data"]
+    Raw -->|Corrections for<br/>readout fidelity| ReadoutCorrected["Readout-fidelity-corrected data"]
 
     Raw --> RawData["Raw data"]
 
-    ReadoutCorrected -->|Corrections for\nentangling gate fidelity| GateCorrected["Gate-fidelity-corrected data"]
+    ReadoutCorrected -->|Corrections for<br/>entangling gate fidelity| GateCorrected["Gate-fidelity-corrected data"]
 ```
 
 The notebooks work with three related probability “styles” for the singlet dataset:
@@ -48,24 +48,24 @@ The notebooks work with three related probability “styles” for the singlet d
 %%{init: {'theme': 'neutral'} }%%
 flowchart LR
   subgraph Inputs
-    D_csv["CSVs in `data/`\n(time samples and populations)"]
-    D_h5["HDF5 in `data/`\n(ADC demo + integration windows)"]
+    D_csv["CSVs in `data/`<br/>(time samples and populations)"]
+    D_h5["HDF5 in `data/`<br/>(ADC demo + integration windows)"]
   end
 
   subgraph "FI Analysis Pipeline (Notebooks 03–06)"
     L["Load probability curves P(t)"]
-    A["Map time → rotation angle α\n(global decaying-cosine fit)"]
-    F["Estimate local derivative dP/dα\n(sliding-window fits in α)"]
-    I["Compute classical Fisher information\nFI(α) = (dP/dα)² / (P(1−P))"]
+    A["Map time → rotation angle α<br/>(global decaying-cosine fit)"]
+    F["Estimate local derivative dP/dα<br/>(sliding-window fits in α)"]
+    I["Compute classical Fisher information<br/>FI(α) = (dP/dα)² / (P(1−P))"]
     X["Export `data_analysis/*_alpha_P_FI_*.csv`"]
-    P["Assemble manuscript/SI panels\n(common α grid + mean across axes)"]
+    P["Assemble manuscript/SI panels<br/>(common α grid + mean across axes)"]
     O_si["Write `si_figures/` exports"]
     O_main["Write `main_text_figures/` exports"]
   end
 
   subgraph "Readout Integration Weights Demo (Notebooks 07 + A01)"
-    W1["Windowed downsampling\n(rectangular integration windows)"]
-    W2["Compute integration weights\n(Linear Discriminant Analysis)"]
+    W1["Windowed downsampling<br/>(rectangular integration windows)"]
+    W2["Compute integration weights<br/>(Linear Discriminant Analysis)"]
     W3["Write `si_figures/integration_weights*`"]
   end
 
@@ -73,8 +73,8 @@ flowchart LR
   P --> O_main
   D_h5 --> W1 --> W2 --> W3
 
-  RC["Optional: raw extraction\n(apply readout confusion matrices)"]
-  GC["Optional: gate-corrected singlet curves\n(used for figure assembly)"]
+  RC["Optional: raw extraction<br/>(apply readout confusion matrices)"]
+  GC["Optional: gate-corrected singlet curves<br/>(used for figure assembly)"]
   RC -.-> L
   GC -.-> L
 ```

@@ -6,14 +6,14 @@ Run the notebooks in numeric order. Each notebook starts with an overview writte
 
 ```mermaid
 flowchart TD
-  data["`data/`"] --> nb01["01: Z-gate curves\n(Fig. 2c,d)"]
-  data --> nb02["02: AC Stark shift sweeps\n(Fig. 2e,f)"]
-  data --> nb03["03: FI extraction\n(readout-corrected singlet + single-qubit)"]
-  data --> nb04["04: FI extraction\n(raw extraction)"]
+  data["`data/`"] --> nb01["01: Z-gate curves<br/>(Fig. 2c,d)"]
+  data --> nb02["02: AC Stark shift sweeps<br/>(Fig. 2e,f)"]
+  data --> nb03["03: FI extraction<br/>(readout-corrected singlet + single-qubit)"]
+  data --> nb04["04: FI extraction<br/>(raw extraction)"]
   data_analysis["`data_analysis/`"] --> nb06["06: Combined SI panels + Fig. 3"]
   nb03 --> data_analysis
   nb04 --> data_analysis
-  nb05["05: Gate-corrected singlet\n(figure assembly)"] --> nb06
+  nb05["05: Gate-corrected singlet<br/>(figure assembly)"] --> nb06
 
   data --> nb07["07: Integration weights demo"]
   data --> nb08["08: Readout correction (IBU) demo"]
