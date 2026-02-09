@@ -2,7 +2,7 @@
 
 Repository for the manuscript [Superconducting antiqubits achieve optimal phase estimation via unitary inversion](https://arxiv.org/abs/2506.04315).
 
-This repository is written for **manuscript reviewers and readers who were not involved in the experiments**. The goal is to make the *data-processing and analysis pipeline* crystal clear and reproducible, starting from the released probability datasets (CSV/HDF5) and ending with the figure exports used in the manuscript.
+This repository provides a transparent and reproducible data-processing and analysis pipeline, starting from the released probability datasets (CSV/HDF5) and ending with the figure exports used in the manuscript.
 
 This repository is organized for readers who want to reproduce the analysis end-to-end from the included CSV/HDF5 artifacts:
 
@@ -15,20 +15,37 @@ This repository is organized for readers who want to reproduce the analysis end-
 
 ## Analysis overview
 
+The major advantage demonstrated in this work relies on **platform-specific unitary inversion** (which reverts the gyromagnetic ratio). While the singlet state is utilized, the platform-specific unitary inversion is the key enabler.
+
 ### Terminology used throughout the repo
 - `t`: experimental time samples (ns in the released CSVs).
 - `α` (alpha): rotation angle (radians) obtained from a global fit, used as the analysis x-axis.
 - `P(α)`: probability of a measurement outcome as a function of `α`.
 - `FI(α)`: (classical) Fisher information computed from `P(α)` using local fits.
 
+### Data processing flow
+
+```mermaid
+%%{init: {'theme': 'neutral'} }%%
+flowchart TD
+    Raw["Raw experimental readout\nprobability distribution"]
+
+    Raw -->|Corrections for\nreadout fidelity| ReadoutCorrected["Readout-fidelity-corrected data"]
+
+    Raw --> RawData["Raw data"]
+
+    ReadoutCorrected -->|Corrections for\nentangling gate fidelity| GateCorrected["Gate-fidelity-corrected data"]
+```
+
 The notebooks work with three related probability “styles” for the singlet dataset:
-- **readout-corrected** (`original` in filenames): corrected for measurement assignment errors.
-- **raw** (`raw` in filenames): reconstructed *uncorrected* measurement probabilities (by applying readout confusion matrices).
-- **gate-corrected** (`corrected` in filenames): singlet curves corrected for entangling-gate errors (provided as derived CSVs and used for figure assembly).
+- **readout-fidelity-corrected data** (`_readout_corrected` in filenames): corrected for measurement assignment errors.
+- **raw data** (`_raw` in filenames): raw *uncorrected* measurement probabilities (obtained by undoing readout correction).
+- **readout-and-gate-corrected data** (`_readout_and_gate_corrected` in filenames): singlet curves corrected for both readout and entangling-gate errors (provided as derived CSVs and used for figure assembly).
 
 ### Data-processing workflow (high level)
 
 ```mermaid
+%%{init: {'theme': 'neutral'} }%%
 flowchart LR
   subgraph Inputs
     D_csv["CSVs in `data/`\n(time samples and populations)"]
@@ -56,7 +73,7 @@ flowchart LR
   P --> O_main
   D_h5 --> W1 --> W2 --> W3
 
-  RC["Optional: raw reconstruction\n(apply readout confusion matrices)"]
+  RC["Optional: raw extraction\n(apply readout confusion matrices)"]
   GC["Optional: gate-corrected singlet curves\n(used for figure assembly)"]
   RC -.-> L
   GC -.-> L
@@ -88,6 +105,19 @@ Entrypoint notebook (overview + links):
 - `positronium_sensing.ipynb`
 
 ## Previews
+
+### Main Text Figures
+
+- Fig 2c,d: Z-gate rotation curves
+![fig2cd](./main_text_figures/fig2cd_z_gate_rotation_curves.png)
+
+- Fig 2e,f: AC Stark shift sweeps
+![fig2ef](./main_text_figures/fig2ef_ac_stark_shift_sweeps.png)
+
+- Fig 3: Singlet vs. Entanglement-free
+![fig3](./main_text_figures/fig3_maintext_singlet_vs_entanglement_free.png)
+
+### Supplementary Information Figures & Demos
 
 - Rectangular windows for calculating the integration weights
 ![integration_weights_windows](./si_figures/integration_weights_windows.png)
