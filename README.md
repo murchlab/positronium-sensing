@@ -63,15 +63,24 @@ flowchart LR
     O_main["Write `main_text_figures/` exports"]
   end
 
-  subgraph "Readout Integration Weights Demo (Notebooks 07 + A01)"
-    W1["Windowed downsampling<br/>(rectangular integration windows)"]
-    W2["Compute integration weights<br/>(Linear Discriminant Analysis)"]
-    W3["Write `si_figures/integration_weights*`"]
+  subgraph RWD[" "]
+    direction TB
+    WTitle["Readout Integration Weights Demo<br/>(Notebooks 07 + A01)"]
+    style WTitle fill:transparent,stroke:transparent,color:#111
+
+    subgraph RWDFLOW[" "]
+      direction LR
+      W1["Windowed downsampling<br/>(rectangular integration windows)"]
+      W2["Compute integration weights<br/>(Linear Discriminant Analysis)"]
+      W3["Write `si_figures/integration_weights*`"]
+      W1 --> W2 --> W3
+    end
+    style RWDFLOW fill:transparent,stroke:transparent
   end
 
   D_csv --> L --> A --> F --> I --> X --> P --> O_si
   P --> O_main
-  D_h5 --> W1 --> W2 --> W3
+  D_h5 --> W1
 
   RC["Optional: raw extraction<br/>(apply readout confusion matrices)"]
   GC["Optional: gate-corrected singlet curves<br/>(used for figure assembly)"]
