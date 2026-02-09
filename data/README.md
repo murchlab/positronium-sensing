@@ -48,7 +48,7 @@ The emphasis is on *analysis reproducibility*: most inputs are already in the fo
 - **Integration-weights demo inputs (HDF5)**
   - [`integration_weights.hdf5`](./integration_weights.hdf5): integration window definitions and reference weight vectors.
   - [`res_1_IJK_sample.hdf5`](./res_1_IJK_sample.hdf5): a small included sample record used by the demo.
-  - [`ADC_sample.hdf5`](./ADC_sample.hdf5): a small synthetic dataset produced by [`notebooks/A01_integration_weights_demo_training_data.ipynb`](../notebooks/A01_integration_weights_demo_training_data.ipynb) (used by [`notebooks/07_readout_integration_weights_demo.ipynb`](../notebooks/07_readout_integration_weights_demo.ipynb)).
+  - [`ADC_sample.hdf5`](./ADC_sample.hdf5): a small demo dataset produced by [`notebooks/A01_integration_weights_demo_training_data.ipynb`](../notebooks/A01_integration_weights_demo_training_data.ipynb) (used by [`notebooks/07_readout_integration_weights_demo.ipynb`](../notebooks/07_readout_integration_weights_demo.ipynb)).
 
 **Naming conventions**
 - `1218` is a date tag that is part of the filename. The notebooks treat it as a label, not as a parameter that changes the analysis.
